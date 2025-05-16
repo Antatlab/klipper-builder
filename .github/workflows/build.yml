@@ -21,8 +21,11 @@ jobs:
       - name: 🛠️ Run build script
         run: ./build.sh
 
-      - name: 📦 Upload firmware
-        uses: actions/upload-artifact@91b7b8f9f12dbbfc9e39438cbe10f598933f57c9
+      - name: 📤 Stwórz release i dodaj plik bin
+        uses: softprops/action-gh-release@v1
         with:
-          name: klipper-firmware
-          path: klipper/out/klipper.bin
+          name: "Klipper firmware"
+          tag_name: "firmware-$(date +%Y%m%d%H%M)"
+          files: klipper/out/klipper.bin
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
