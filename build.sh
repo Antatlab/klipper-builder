@@ -8,6 +8,7 @@ echo "📦 Ściąganie Klippera..."
 rm -rf klipper
 git clone https://github.com/Klipper3d/klipper.git
 cd klipper
+git checkout v0.11.0
 
 
 echo "🧠 Ładowanie konfiguracji..."
