@@ -1,0 +1,22 @@
+name: Build Klipper
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-klipper:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repo
+        uses: actions/checkout@v3
+
+      - name: 🔧 Install toolchain
+        run: |
+          sudo apt update
+          sudo apt install -y gcc-arm-none-eabi make git
+
+      - name: 🚧 Run build script
+        run: ./build.sh
