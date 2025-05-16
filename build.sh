@@ -11,7 +11,6 @@ cd klipper
 git checkout v0.11.0
 
 echo "🧠 Ładowanie konfiguracji..."
-make menuconfig < /dev/null
 cat ../klipper.config > .config
 
 echo "🔨 Budowanie Klippera z własną Newlib..."
