@@ -10,7 +10,6 @@ git clone https://github.com/Klipper3d/klipper.git
 cd klipper
 git checkout v0.11.0
 
-
 echo "🧠 Ładowanie konfiguracji..."
 cp ../klipper.config .config
 
@@ -20,4 +19,4 @@ make -j$(nproc) \
     NEWLIB_CFLAGS="-nostdlib -isystem \$CONFIG_NEWLIB_BASE/include" \
     NEWLIB_LDFLAGS="-L\$CONFIG_NEWLIB_BASE/lib"
 
-echo "✅ Gotowe. Plik binarny w: out/klipper.bin"
+echo "✅ Gotowe. Plik binarny w: klipper/out/klipper.bin"
