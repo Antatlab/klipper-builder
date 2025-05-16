@@ -5,6 +5,7 @@ echo "🔍 Sprawdzanie toolchaina..."
 which arm-none-eabi-gcc || { echo "❌ Brak arm-none-eabi-gcc!"; exit 1; }
 
 echo "📦 Ściąganie Klippera..."
+rm -rf klipper
 git clone https://github.com/Klipper3d/klipper.git
 cd klipper
 
