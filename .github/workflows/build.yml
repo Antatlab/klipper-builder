@@ -18,5 +18,11 @@ jobs:
           sudo apt update
           sudo apt install -y gcc-arm-none-eabi make git
 
-      - name: 🚧 Run build script
+      - name: 🛠️ Run build script
         run: ./build.sh
+
+      - name: 📦 Upload firmware
+        uses: actions/upload-artifact@v3
+        with:
+          name: klipper-firmware
+          path: out/klipper.bin
