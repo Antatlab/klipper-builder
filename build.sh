@@ -28,6 +28,7 @@ CONFIG_NEWLIB_BASE="/__w/klipper-builder/klipper-builder/newlib"
 EOF
 
 echo "🔨 Budowanie Klippera z własną Newlib..."
+make clean
 make -j$(nproc) \
     NEWLIB_CFLAGS="-nostdlib -isystem \$CONFIG_NEWLIB_BASE/include" \
     NEWLIB_LDFLAGS="-L\$CONFIG_NEWLIB_BASE/lib"
