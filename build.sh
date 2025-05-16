@@ -11,7 +11,8 @@ cd klipper
 git checkout v0.11.0
 
 echo "🧠 Ładowanie konfiguracji..."
-cp ../klipper.config .config
+make menuconfig < /dev/null
+cat ../klipper.config > .config
 
 echo "🔨 Budowanie Klippera z własną Newlib..."
 make clean
@@ -19,4 +20,4 @@ make -j$(nproc) \
     NEWLIB_CFLAGS="-nostdlib -isystem \$CONFIG_NEWLIB_BASE/include" \
     NEWLIB_LDFLAGS="-L\$CONFIG_NEWLIB_BASE/lib"
 
-echo "✅ Gotowe. Plik binarny w: klipper/out/klipper.bin"
+echo "✅ Gotowe. Plik binarny znajduje się w: klipper/out/klipper.bin"
