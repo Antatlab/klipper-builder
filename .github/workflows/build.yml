@@ -22,7 +22,7 @@ jobs:
         run: ./build.sh
 
       - name: 📦 Upload firmware
-        uses: actions/upload-artifact@v3.1.2
+        uses: actions/upload-artifact@91b7b8f9f12dbbfc9e39438cbe10f598933f57c9
         with:
           name: klipper-firmware
           path: klipper/out/klipper.bin
